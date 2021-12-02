@@ -1,8 +1,12 @@
 import day1 from "./1/day1.js";
 import day2 from "./2/day2.js";
 
-console.log("*** DAY 1 ***");
+const newDay = (day) => console.log(`*** DAY ${day} ***`);
+const newLine = () => console.log("\n");
+
+newDay(1);
 day1();
 
-console.log("\n\n*** DAY 2 ***");
+newLine();
+newDay(2);
 day2();
