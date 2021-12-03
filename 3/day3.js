@@ -1,10 +1,9 @@
 import readArrayFromFile from "../utils/readArrayFromFile.js";
 
-
-const getEmptyBitNo = (len) => Array(len).fill(0);
+const getEmptyBinNo = (len) => Array(len).fill(0);
 
 const convertStrToBin = (str) => {
-    const bin = getEmptyBitNo(str.length);
+    const bin = getEmptyBinNo(str.length);
 
     for(let i = 0; i < str.length; i++) {
         bin[i] = +str.charAt(i);
@@ -14,6 +13,7 @@ const convertStrToBin = (str) => {
 }
 
 const getMostCommonBit = (val, total) => val >= total/2 ? 1 : 0;
+
 const getLeastCommonBit = (val, total) => val >= total/2 ? 0 : 1;
 
 const calcBinToDec = (val) => {
@@ -30,14 +30,14 @@ const calcBinToDec = (val) => {
 
 const getRating = (data, binLen, getBit) => {
     let filteredData = data;
-    let val = getEmptyBitNo(binLen);
+    let val = getEmptyBinNo(binLen);
     
     for(let i = 0; i < binLen; i++) {
-        let runningTotal = 0;
+        let total = 0;
 
-        filteredData.forEach((bin) => runningTotal += bin[i]);
+        filteredData.forEach((bin) => total += bin[i]);
 
-        val[i] = getBit(runningTotal, filteredData.length);
+        val[i] = getBit(total, filteredData.length);
 
         filteredData = filteredData.filter(d => d[i] === val[i]);
         
