@@ -33,21 +33,6 @@ const matchNumber = (number, card) =>
 
 const allNumbersMatched = (numbers) => numbers.every((n) => n === null);
 
-const isDiagonalBingo = (card, x, y, tX, tY) => {
-  const numbers = [];
-
-  let i = x;
-  let j = y;
-
-  while (i < 5 && j < 5) {
-    numbers.push(card[j][i]);
-    i += tX;
-    j += tY;
-  }
-
-  return allNumbersMatched(numbers);
-};
-
 const isColumnBingo = (card, x) => {
   const numbers = [];
   card.forEach((r) => numbers.push(r[x]));
@@ -61,13 +46,6 @@ const isBingo = (card) => {
   if (rowMatch) {
     return rowMatch;
   }
-
-  //   if (
-  //     isDiagonalBingo(card, 0, 0, 1, 1) ||
-  //     isDiagonalBingo(card, 0, card.length - 1, 1, -1)
-  //   ) {
-  //     return true;
-  //   }
 
   for (let i = 0; i < 5; i++) {
     if (isColumnBingo(card, i)) {
