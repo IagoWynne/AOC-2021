@@ -6,6 +6,7 @@ import day5 from "./5/day5.js";
 import day6 from "./6/day6.js";
 import day7 from "./7/day7.js";
 import day8 from "./8/day8.js";
+import day9 from "./9/day9.js";
 
 const newDay = (day) => console.log(`*** DAY ${day} ***`);
 const newLine = () => console.log("\n");
@@ -40,3 +41,7 @@ day7();
 newLine();
 newDay(8);
 day8();
+
+newLine();
+newDay(9);
+day9();
